@@ -20,16 +20,23 @@ Our objective here is to build an AI-based classifier model to assign the ticket
 
 Dataset - https://drive.google.com/open?id=143R3O0o3s3YyC2ZAoVDZOWM1APiNtGPA
 
-# Steps / Procedure :
+# Steps / Procedure
 Text in Description is pre-processed by removing unwanted characters and words. Some descriptions are given in other languages which are 
 translated to english internally. Stop words are removed and all the words are lemmatized.
 
-With this pre-processed description the words in the corpus are tokenized and embeddings are created with word2vec. Embedding was also
+With this pre-processed description the words in the corpus are tokenized and embeddings were created with word2vec. Embedding was also
 generated with glove.
 
-Different NLP algorithms were tried out - RNN, LSTM, GRU
+Different NLP algorithms were tried out - RNN, LSTM, GRU,
 Traditional ML algorithms such as RandomForest and SVM were tried out.
 
+# Limitations 
+
+As part of Data pre-processing, we had grouped all assignment groups with less than 10 entries as one group (misc_grp) which had reduced the Target class from 74 to 50 groups. While applying this model in the real world there could be additional intervention required to classify the tickets if it has been classified as misc_grp by our model. Since the number of elements reported under misc_grp are less, we expect this intervention to be done less often.
+
+# Conclusion 
+
+Although this model can classify the IT tickets with 91.24% accuracy, to achieve better accuracy in the real world it would be good if the business can collect additional data around 300 records for each group.
 
 
 
